@@ -1,3 +1,7 @@
+<?php
+include('Paginas/settings.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +20,13 @@
       <div class="container cabecera col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="logoCabecera col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <img src="Imagenes/logo-omar.png" alt="Logo de Omar" width="150" height="65">
-          <a href="Paginas/login.html" id="botonLogin">Iniciar sesión</a>
+          <?php
+          if (!isset($_SESSION["conectado"])) {
+            echo "<a href='Paginas/login.html' id='botonLogin'>Iniciar sesión</a>";
+          }else{
+            echo "<a href='Paginas/panelDeControl.php' id='botonLogin'>Panel de control</a>";
+          }
+           ?>
         </div>
       </div>
       <div class="divFormulario col-lg-12 col-md-12 col-sm-12 col-xs-12">

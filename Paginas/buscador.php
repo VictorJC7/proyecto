@@ -6,14 +6,12 @@ session_start();
 // $_SESSION['sqlSearch']="";
 
 $busqueda = $_GET['busqueda'];
+$_SESSION['busq'] = true;
 
 //Contamos el número de palabras de la cadena para determinar el tipo de búsqueda
 //Primero nos aseguramos de que la cadena no esté vacía.
 if ($busqueda<>'') {
   //Contamos el numero de palabras
-  $palabras = explode(" ",$busqueda);
-  $numPalabras = count($palabras);
-
   if(isset($_GET['bCod'])){
       echo "Se ha seleccionado la busqueda por codigo";
       $sqlSearch = "SELECT * FROM producto WHERE idProducto LIKE '$busqueda'";
@@ -21,7 +19,7 @@ if ($busqueda<>'') {
 
       $result = mysqli_query($conexion, $sqlSearch);
       $row_cnt = $result->num_rows;
-      $fila = mysqli_fetch_assoc($result);
+      $_SESSION['fila'] = mysqli_fetch_assoc($result);
 
       if ($row_cnt == 1) {
         //Si se llega aqui significa que hay un producto con ese codigo.
@@ -44,7 +42,7 @@ if ($busqueda<>'') {
 
       $result = mysqli_query($conexion, $sqlSearch);
       $row_cnt = $result->num_rows;
-      $fila = mysqli_fetch_assoc($result);
+      $_SESSION['fila'] = mysqli_fetch_assoc($result);
 
       if ($row_cnt > 0) {
         echo "Se han encontrado " .$row_cnt. " resultados que coinciden con tus parametros de búsqueda." ;

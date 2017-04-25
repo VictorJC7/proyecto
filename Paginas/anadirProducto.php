@@ -22,21 +22,22 @@ if ($_SESSION["conectado"] == false) {
     <h1 class="tituloCentrado">Añadir un Producto</h1>
     <div class="formularioAnadirProducto col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <form class="formAnadirProducto" action="comprobarExistencia.php" method="get">
-        <label>ID del producto*: <input type="text" name="inIdProd" id="inIdProd" placeholder="123456789X" required></label>
-        <label>Nombre del producto*: <input type="text" name="inNomProd" id="inNomProd" placeholder="Nombre del producto" required></label>
-        <label>Descripción: <textarea rows="4" cols="50"  id="inDesProd"></textarea></label>
-        <label>Precio: <input type="text" name="inPrecioProd" id="inPrecioProd"></label>
-        <label>Imagen: <input type="file" name="inImagenProd" id="inImagenProd"></label>
-        <label>ID de video: <input type="text" name="inVideoProd" id="inVideoProd"></label>
-        <label>Categoría: <select class="" name="">
+        <label>ID del producto*:</label> <input type="text" name="inIdProd" id="inIdProd" placeholder="123456789X" required>
+        <label>Nombre del producto*:</label> <input type="text" name="inNomProd" id="inNomProd" placeholder="Nombre del producto" required>
+        <label>Descripción:</label> <textarea rows="4" cols="50" name="inDesProd" id="inDesProd"></textarea>
+        <label>Precio:</label> <input type="text" name="inPrecioProd" id="inPrecioProd">
+        <label>Imagen:</label> <input type="file" name="inImagenProd" id="inImagenProd">
+        <label>ID de video:</label> <input type="text" name="inVideoProd" id="inVideoProd">
+        <label>Categoría:</label> <select class="" name="">
           <option value="">Pintura</option>
           <option value="">Barniz</option>
           <option value="">Resina</option>
           <option value="">Otro</option>
-        </select></label>
+        </select>
         <input type="submit" name="" value="Añadir">
       </form>
-        <button id="generarAuto">Generar código automáticamente</button>
+        <button id="generarAuto">Generar código automáticamente</button><br>
+
     </div>
   </body>
 </html>
