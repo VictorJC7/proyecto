@@ -37,7 +37,6 @@ if ($_SESSION["conectado"] == false) {
         <input type="submit" name="" value="Añadir">
       </form>
         <button id="generarAuto">Generar código automáticamente</button><br>
-
     </div>
   </body>
 </html>

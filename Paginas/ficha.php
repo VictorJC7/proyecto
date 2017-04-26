@@ -4,18 +4,18 @@ session_start();
 
 //Obtenemos los diferentes campos del producto que hemos buscado o escaneado.
 //Si se ha llegado aqui por el buscador la ariable del id ya la tendremos definida
-if (isset($_SESSION["busq"]) {
-  $_SESSION['busq'] = false;
-  $codigo_Producto = $_SESSION['codigoProducto'];
-}
+// if (isset($_SESSION["busq"]) {
+//   $_SESSION['busq'] = false;
+//   $codigo_Producto = $_SESSION['codigoProducto'];
+// }
 //Si se ha llegado escaneando el QR lo obtenemos cogiendola de la url por el metodo GET
-else {
+// else {
   $codigo_Producto = $_GET['idQR'];
   //Generamos la cosulta para obtener los datos de las filas
   $sqlSearch = "SELECT * FROM producto WHERE idProducto LIKE '$codigo_Producto'";
   $result = mysqli_query($conexion, $sqlSearch);
   $_SESSION['fila'] = mysqli_fetch_assoc($result);
-}
+// }
 
 $nombre_Producto = $_SESSION['fila']['nombre_producto'];
 $descripcion_Producto = $_SESSION['fila']['descripcion_producto'];

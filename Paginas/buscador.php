@@ -19,13 +19,13 @@ if ($busqueda<>'') {
 
       $result = mysqli_query($conexion, $sqlSearch);
       $row_cnt = $result->num_rows;
-      $_SESSION['fila'] = mysqli_fetch_assoc($result);
 
       if ($row_cnt == 1) {
         //Si se llega aqui significa que hay un producto con ese codigo.
         echo "Existe un producto con el código introducido.";
         $_SESSION['codigoProducto']=$busqueda;
-        header("Location: ficha.php");
+        $url = "http://localhost/Proyecto/Paginas/ficha.php?idQR=" .$_SESSION['codigoProducto'];
+        header("Location: " .$url);
       }elseif ($row_cnt > 1){
         echo "Existe mas de un producto con el código introducido. Por favor contacte con un administrador para que sean
         revisados los pructos duplicados";
@@ -54,9 +54,7 @@ if ($busqueda<>'') {
 
       }else {
         echo "No se han encotrado productos que coincidan con los parametros introducidos.";
-      }{
-
-        }
+      }
   }else {
     echo "<script> alert('Por favor selecciona busqueda por código o nombre.');</script>";
     header("Location: ../index.php");
