@@ -1,5 +1,6 @@
 <?php
 include('settings.php');
+
 session_start();
 
 if ($_SESSION["conectado"] == false) {

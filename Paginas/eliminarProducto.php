@@ -22,10 +22,10 @@ if ($_SESSION["conectado"] == false) {
   </head>
   <body>
     <div class="titulo text-center">
-      <h1>Introduzca la ID del producto que quiere modificar.</h1>
+      <h1>Introduzca la ID del producto que desea eliminar.</h1>
     </div>
     <div class="divFormulario col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <form class="formulario" method="GET" action="actualizarProducto.php">
+      <form class="formulario" method="GET" action="delete.php">
         <input type="text" name="busqueda" placeholder="Buscar..." id="busqueda" maxlength="">
         <input type="submit" name="BotonEnviar" value="Buscar" id="botonBuscar"><br>
       </form>

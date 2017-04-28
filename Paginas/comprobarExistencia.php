@@ -9,8 +9,6 @@ if ($_SESSION["conectado"] == false) {
   header("location: login.html");
 }
 
-
-
 $idProd = $_GET['inIdProd'];
 $nomProd = $_GET['inNomProd'];
 $desProd = $_GET['inDesProd'];

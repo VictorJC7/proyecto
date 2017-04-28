@@ -28,7 +28,7 @@ if ($_SESSION["conectado"] == false) {
        <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='../index.php'">Inicio</button>
        <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='anadirProducto.php'">Añadir un producto</button>
        <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='modificarProducto.php'">Modificar un producto</button>
-       <button type="button" class="btn btn-default btn-lg btn-block">Eliminar un producto</button>
+       <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='eliminarProducto.php'">Eliminar un producto</button>
        <button type="button" class="btn btn-default btn-lg btn-block" onClick="window.location.href='cerrarSesion.php'">Cerrar sesión</button>
      </div>
      <div class="espaciador col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>

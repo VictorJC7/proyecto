@@ -1,12 +1,15 @@
 <?php
+
 include('settings.php');
 session_start();
+
 if ($_SESSION["conectado"] == false) {
   echo "<script> alert('Debe iniciar sesión para acceder a esta página.');</script>";
   header("location: login.html");
 }
- ?>
 
+$busqueda = $_GET['busqueda'];
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,18 +21,28 @@ if ($_SESSION["conectado"] == false) {
     <!-- Latest compiled and minified CSS of Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>Modificar un producto</title>
-  </head>
+
+    <title>Eliminar producto</title>
+    </head>
   <body>
-    <div class="titulo text-center">
-      <h1>Introduzca la ID del producto que quiere modificar.</h1>
-    </div>
-    <div class="divFormulario col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <form class="formulario" method="GET" action="actualizarProducto.php">
-        <input type="text" name="busqueda" placeholder="Buscar..." id="busqueda" maxlength="">
-        <input type="submit" name="BotonEnviar" value="Buscar" id="botonBuscar"><br>
-      </form>
-    </div>
+  <div class="margenSup text-center">
+    <?php
+    if ($busqueda<>'') {
+      $sql = "SELECT * FROM producto WHERE idProducto = '$busqueda'";
+      $registro = mysqli_query($conexion, $sql);
+
+      if ($reg=mysqli_fetch_array($registro)){
+        mysqli_query($conexion, "DELETE FROM producto WHERE idProducto = '$busqueda'");
+        echo "Datos Eliminados";
+      }
+      else {
+      echo "Datos no han sido Eliminados.";
+      }
+    }else {
+        echo "<h2> No se ha encontrado ningún producto con la ID itroducida.</h2>";
+        echo "<a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+      }
+    ?>﻿
   </div>
   </body>
 </html>

@@ -2,8 +2,12 @@
 
 include('settings.php');
 session_start();
-
 $busqueda = $_GET['busqueda'];
+
+if ($_SESSION["conectado"] == false) {
+  echo "<script> alert('Debe iniciar sesión para acceder a esta página.');</script>";
+  header("location: login.html");
+}
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +25,11 @@ $busqueda = $_GET['busqueda'];
   </head>
   <body>
     <div class="margenSup text-center">
+      <form name="formulario" method="GET" action="update.php">
     <?php
-    if ($busqueda<>'') {
+    //Compprobamos que venimos de esta pagina, en caso afirmativo significa que ya hemos estado aqui y por lo tanto hemos modificado el producto
+      if ($busqueda<>'') {
+      $_SESSION['imHere'] = true;
       //Contamos el numero de palabrasS
           $sqlSearch = "SELECT * FROM producto WHERE idProducto LIKE '$busqueda'";
           // $_SESSION['sqlSearch']=mysqli_real_escape_string($sqlSearch);
@@ -44,7 +51,8 @@ $busqueda = $_GET['busqueda'];
               <option value=''>Otro</option>
             </select><br>";
             echo "<label>Proveedor: </label> <input type='text' name='inProvProd' id='inProvProd' value='" . $_SESSION['fila']['nombre_proveedor'] . "'><br>";
-            echo "<input type='submit' value='Añadir'><a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+            echo "<input type='submit' value='Añadir' name='enviar'><a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+            echo "</form>";
           }elseif ($row_cnt > 1){
             echo "Existe mas de un producto con el código introducido. Por favor contacte con un administrador para que sean
             revisados los pructos duplicados";
