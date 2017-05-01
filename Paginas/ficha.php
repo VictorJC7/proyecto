@@ -1,4 +1,4 @@
-<?php
+ <?php
 include('settings.php');
 session_start();
 
@@ -36,35 +36,51 @@ $proveedor_Producto = $_SESSION['fila']['nombre_proveedor'];
     <link rel=stylesheet href="../CSS/style.css" type="text/css">
   </head>
   <body>
-    <div class="contaier-fluid text-center">
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila1">
-        <?php echo $codigo_Producto; ?>
+    <!-- <div class="container-fluid"> -->
+      <div class="cabeceraProd text-center col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <a href='../index.php' id='botonFicha'>Volver</a>
+        <h1><?php echo $nombre_Producto; ?></h1>
       </div>
-    <div class="contaier-fluid">
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila1">
-        <?php echo $nombre_Producto; ?>
-      </div>
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila2">
-        <?php echo $descripcion_Producto; ?>
-      </div>
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila3">
-        <?php echo $precio_Producto; ?>
-      </div>
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila4">
-        <img src="<?php echo $urlImagen_Producto; ?>" alt="Imagen del producto">
-      </div>
-        <?php
-        if ($urlVideo_Producto != "") {
-          echo "<div class='row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila5'>
-          <a href=" .  "'" . $urlVideo_Producto . "'" . "> Ver video </a></div>";
-        }
+      <div class="tablaProdImg container-fluid">
+      <!-- <div class="sep col-lg-2 col-md-2 col-sm-1 col-xs-1"></div> -->
+      <div class="contenidoProd col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="sep col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+        <div class="tablaContenido col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila1">
+            <span> Código: </span><?php echo $codigo_Producto; ?>
+          </div>
+          <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila2">
+            <span> Nombre: </span><?php echo $nombre_Producto; ?>
+          </div>
+          <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila3">
+            <span> Descripción: </span><?php echo $descripcion_Producto; ?>
+          </div>
+          <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila4">
+            <span> Precio: </span><?php echo $precio_Producto . "€";?>
+          </div>
+          <?php
+          if ($urlVideo_Producto != "") {
+            $urlYou = "https://www.youtube.com/watch?v=" . $urlVideo_Producto;
+            echo "<div class='row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila5'>
+            <a href='$urlYou' target='_blank'> Ver vídeo </a></div>";
+          }
+          if ($categoria_Producto !="") {
+            echo "<div class='row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila6'>
+            <span> Categoría: </span>". $categoria_Producto . "</div>";
+          }
+          if ($proveedor_Producto !="") {
+            echo "<div class='row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila fila7'>
+            <span> Proveedor: </span>". $proveedor_Producto . "</div>";
+          }
          ?>
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila4">
-        <?php echo $categoria_Producto; ?>
-      </div>
-
-      <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 fila4">
-        <?php echo $proveedor_Producto; ?>
-      </div>
+    </div><!-- Tabla  -->
+    <div class="imagen col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <img src="<?php echo $urlImagen_Producto ?>" alt="Imagen del producto">
+    </div>
+    <div class="sep col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+    </div>
+    <!-- <div class="sep col-lg-2 col-md-2 col-sm-1 col-xs-1"></div> -->
+  </div> <!-- Tabla de contenido e imagen -->
+  <!--</div> Contenedor  -->
   </body>
 </html>

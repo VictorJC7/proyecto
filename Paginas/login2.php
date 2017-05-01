@@ -12,7 +12,6 @@ $sql= "SELECT * FROM usuarios WHERE nombre='$username' AND pass='$password'";;
 
 $result = mysqli_query($conexion, $sql);
 $row_cnt = $result->num_rows;
-$fila = mysqli_fetch_assoc($result);
 
 if ($row_cnt > 0) {
   $_SESSION['nom_usuario']= $username;
