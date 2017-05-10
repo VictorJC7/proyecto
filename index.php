@@ -14,12 +14,13 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Buscador</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
   </head>
   <body>
     <div class="container-fluid contenido">
       <div class="container cabecera col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="logoCabecera col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <img src="Imagenes/logo-omar.png" alt="Logo de Omar" width="150" height="65">
+          <img src="Imagenes/logo-omar.png" alt="Logo de Omar" width="150" height="65" id="logoOmar">
           <?php
           if (!isset($_SESSION["conectado"])) {
             echo "<a href='Paginas/login.html' id='botonLogin'>Iniciar sesión</a>";

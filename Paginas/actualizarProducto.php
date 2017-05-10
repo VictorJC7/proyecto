@@ -21,11 +21,15 @@ if ($_SESSION["conectado"] == false) {
     <!-- Latest compiled and minified CSS of Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <title>Modificar producto</title>
   </head>
   <body>
-    <div class="margenSup text-center">
-      <form name="formulario" method="GET" action="update.php">
+    <div class="margenSup">
+    <h1 class='text-center'>Introduzca los datos que desea modificar</h1>
+    <div class="formularioAnadirProducto col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+      <form name="formulario" class="formAnadirProducto" method="GET" action="update.php">
     <?php
     //Compprobamos que venimos de esta pagina, en caso afirmativo significa que ya hemos estado aqui y por lo tanto hemos modificado el producto
       if ($busqueda<>'') {
@@ -51,18 +55,18 @@ if ($_SESSION["conectado"] == false) {
               <option value=''>Otro</option>
             </select><br>";
             echo "<label>Proveedor: </label> <input type='text' name='inProvProd' id='inProvProd' value='" . $_SESSION['fila']['nombre_proveedor'] . "'><br>";
-            echo "<input type='submit' value='Añadir' name='enviar'><a href='panelDeControl.php' id='botonVolver'>Volver</a>";
-            echo "</form>";
+            echo "<input type='submit' value='Modificar' name='enviar'><a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+            echo "</form></div>";
           }elseif ($row_cnt > 1){
             echo "Existe mas de un producto con el código introducido. Por favor contacte con un administrador para que sean
-            revisados los pructos duplicados";
+            revisados los pructos duplicados</div>";
           }else {
-            echo "<h2> No se ha encontrado ningún producto con la ID itroducida.</h2>";
-            echo "<a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+            echo "</div><div class='text-center'><h2> No se ha encontrado ningún producto con la ID itroducida.</h2>";
+            echo "<a href='panelDeControl.php' id='botonVolver'>Volver</a></div>";
           }
     }else {
-      echo "<h2> No se ha encontrado ningún producto con la ID itroducida.</h2>";
-      echo "<a href='panelDeControl.php' id='botonVolver'>Volver</a>";
+      echo "</div><div class='text-center'><h2> No se ha encontrado ningún producto con la ID itroducida.</h2>";
+      echo "<a href='panelDeControl.php' id='botonVolver'>Volver</a></div>";
     }
      ?>
        </div>

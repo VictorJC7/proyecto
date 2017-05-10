@@ -15,13 +15,15 @@ if ($_SESSION["conectado"] == false) {
   <head>
     <meta charset="utf-8">
     <title>Añadir producto</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel=stylesheet href="../CSS/style.css" type="text/css">
   </head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel=stylesheet href="../CSS/style.css" type="text/css">
+
   <body>
     <h1 class="tituloCentrado">Añadir un Producto</h1>
-    <div class="formularioAnadirProducto col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="formularioAnadirProducto col-lg-6 col-md-12 col-sm-12 col-xs-12">
       <form class="formAnadirProducto" action="comprobarExistencia.php" method="get">
         <label>ID del producto*:</label> <input type="text" name="inIdProd" id="inIdProd" placeholder="123456789X" required>
         <label>Nombre del producto*:</label> <input type="text" name="inNomProd" id="inNomProd" placeholder="Nombre del producto" required>
@@ -35,9 +37,9 @@ if ($_SESSION["conectado"] == false) {
           <option value="">Resina</option>
           <option value="">Otro</option>
         </select>
-        <input type="submit" name="" value="Añadir">
+          <input type="submit" name="" value="Añadir" id="botonAnadir" class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <button id="generarAuto" onclick="evitarDefault(event);" class="col-lg-6 col-md-12 col-sm-12 col-xs-12">Generar código automáticamente</button><br>
       </form>
-        <button id="generarAuto">Generar código automáticamente</button><br>
     </div>
   </body>
 </html>

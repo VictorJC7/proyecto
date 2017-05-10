@@ -22,6 +22,7 @@ function eliminar($con, $consulta){
     <!-- Font awesome: -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel=stylesheet href="../CSS/style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <!-- <script type="text/javascript" src="Scripts/comprobacionBuscador.js"></script> -->
     <!-- Latest compiled and minified CSS of Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"

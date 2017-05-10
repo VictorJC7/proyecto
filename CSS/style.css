@@ -141,20 +141,92 @@ border: 1px solid black;
 #botonFicha:hover{
   font-weight: bold;
 }
+#botonAnadir{
+  margin: 10px 0px 10px 0px;
+  background-color: #004a92;
+  border: 1px solid #004a92;
+  color: white;
+}
+#botonAnadir:hover{
+  background-color: #003D7A;
+}
+#generarAuto{
+  padding: 0px 0px 0px 0px;
+  height: 50px;
+  background-color: #004a92;
+  border: 1px solid #004a92;
+  color: white;
+}
+#generarAuto:hover{
+  background-color: #003D7A;
+}
 
 /*Media querys para diseño responsive*/
 
 @media (min-width: 640px) {
-
+  /*#busqueda{
+    width: 350px;
+    height: 75px;
+  }*/
 }
 
 /*Tablet*/
 @media (min-width: 321px) and (max-width: 639px) {
-
+  #busqueda{
+    width: 75%;
+  }
+  #botonLogin{
+    margin-top: 15px !important;
+    padding: 5px 5px 5px 5px;
+    background-color: #004a92;
+    color: #FFFFFF;
+    text-decoration: none;
+    float: right;
+    border-radius: 4px;
+  }
+  #botonPanelControl{
+    margin-top: 25px !important;
+    font-size: 20px !important;
+  }
 }
 
 /*Movil*/
-@media (max-width: 320px) {
-
-
+@media (max-width: 480px) {
+#busqueda{
+  width: 75%;
+}
+#botonLogin{
+  margin-top: 15px !important;
+  padding: 5px 5px 5px 5px;
+  background-color: #004a92;
+  color: #FFFFFF;
+  text-decoration: none;
+  float: right;
+  border-radius: 4px;
+  font-size: 18px;
+}
+#logoOmar{
+  width: 75px;
+  height: 32px;
+  margin-top: 15px;
+}
+#botonBuscar{
+  margin-top: 15px;
+  font-size: 20px;
+}
+#botonPanelControl{
+  margin-top: 25px;
+  font-size: 20px;
+}
+.formAnadirProducto input{
+width: 100%;
+margin-left: 15px;
+}
+#generarAuto{
+  font-size: 18px;
+  height: 50px;
+  background-color: #004a92;
+  border: 1px solid #004a92;
+  color: white;
+}
 }
